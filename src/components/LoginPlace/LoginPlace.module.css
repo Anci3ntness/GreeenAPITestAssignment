@@ -1,0 +1,61 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	height: fit-content;
+	background-color: var(--rui_placecolor);
+	box-shadow: 0 0 0.3em 0 var(--rui_black);
+	align-items: center;
+	justify-content: flex-start;
+	border-radius: 0.08em;
+	overflow: hidden;
+}
+.title {
+	margin: 0;
+	background-color: var(--rui_white);
+	padding: 1em;
+	width: 100%;
+	text-align: center;
+}
+.inputPlace {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5em;
+	padding: 2em;
+	width: 100%;
+	flex: 1;
+}
+.inputPlace input {
+	width: 100%;
+	font-size: 1.2em;
+	border: 0.08em solid var(--rui_grey);
+	border-radius: 0.08em;
+	padding: 0.1em 0.2em;
+	background-color: var(--rui_white);
+	color: var(--rui_black);
+	transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
+}
+.inputPlace input:hover {
+	border-color: var(--rui_black);
+}
+.inputPlace input:focus {
+	border-color: var(--rui_color);
+	box-shadow: 0 0 0.2em 0 var(--rui_color);
+}
+.submitPlace {
+	padding-left: 2em;
+	padding-bottom: 0.8em;
+	align-self: flex-start;
+}
+.submitPlace .submit {
+	font-size: 1.2em;
+	padding: 0.4em 0.8em;
+	cursor: pointer;
+	border: 0.08em solid var(--rui_color);
+	border-radius: 0.16em;
+	transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+}
+.submitPlace .submit:hover {
+	background-color: var(--rui_color);
+	color: var(--rui_white);
+}

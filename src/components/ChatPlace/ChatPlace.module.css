@@ -1,0 +1,12 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+	height: fit-content;
+	background-color: var(--rui_placecolor);
+	box-shadow: 0 0 0.3em 0 var(--rui_black);
+	align-items: center;
+	justify-content: flex-start;
+	border-radius: 0.08em;
+	overflow: hidden;
+}
