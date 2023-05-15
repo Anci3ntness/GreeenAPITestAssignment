@@ -1,4 +1,4 @@
-# ReactProject
+# GreenAPI Test Assignment
 
 Для работы проекта требуется скачать [NODE.JS 18] и выше
 
