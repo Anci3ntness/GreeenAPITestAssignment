@@ -24,6 +24,22 @@ input,
 button,
 a {
 	all: unset;
+	box-sizing: border-box;
+}
+input {
+	box-shadow: 0 0 1em rgba(11, 20, 26, 0.05);
+	border-radius: 0.16em;
+	padding: 0.4em 0.8em;
+	background-color: var(--rui_white);
+	color: var(--rui_black);
+}
+button {
+	text-align: center;
+	padding: 0.4em 0.8em;
+	cursor: pointer;
+	border: 0.08em solid var(--rui_black);
+	border-radius: 0.16em;
+	user-select: none;
 }
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -33,6 +49,7 @@ code {
 	/* colors */
 	--rui_color: #00a884;
 	--rui_color30: #00a88430;
+	--rui_red: #f20;
 	--rui_semicolor: #e2e1de;
 	--rui_semicolor30: #e2e1de30;
 	--rui_placecolor: #f0f2f5;

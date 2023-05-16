@@ -4,7 +4,7 @@
 	width: 40%;
 	height: fit-content;
 	background-color: var(--rui_placecolor);
-	box-shadow: 0 0 0.3em 0 var(--rui_black);
+	box-shadow: 0 0 1em rgba(11, 20, 26, 0.05);
 	align-items: center;
 	justify-content: flex-start;
 	border-radius: 0.08em;
@@ -28,18 +28,9 @@
 .inputPlace input {
 	width: 100%;
 	font-size: 1.2em;
-	border: 0.08em solid var(--rui_grey);
-	border-radius: 0.08em;
-	padding: 0.1em 0.2em;
-	background-color: var(--rui_white);
-	color: var(--rui_black);
 	transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
 }
-.inputPlace input:hover {
-	border-color: var(--rui_black);
-}
 .inputPlace input:focus {
-	border-color: var(--rui_color);
 	box-shadow: 0 0 0.2em 0 var(--rui_color);
 }
 .submitPlace {
@@ -47,15 +38,12 @@
 	padding-bottom: 0.8em;
 	align-self: flex-start;
 }
-.submitPlace .submit {
+.submitPlace .submit_btn {
 	font-size: 1.2em;
-	padding: 0.4em 0.8em;
-	cursor: pointer;
-	border: 0.08em solid var(--rui_color);
-	border-radius: 0.16em;
+	border-color: var(--rui_color);
 	transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
 }
-.submitPlace .submit:hover {
+.submitPlace .submit_btn:hover {
 	background-color: var(--rui_color);
 	color: var(--rui_white);
 }

@@ -1,12 +1,73 @@
 .root {
 	display: flex;
-	flex-direction: column;
-	width: 40%;
-	height: fit-content;
+	width: 95%;
+	max-width: 1600px;
+	height: 95vh;
+	/* height: fit-content; */
 	background-color: var(--rui_placecolor);
-	box-shadow: 0 0 0.3em 0 var(--rui_black);
+	box-shadow: 0 0 1em rgba(11, 20, 26, 0.05);
 	align-items: center;
 	justify-content: flex-start;
 	border-radius: 0.08em;
 	overflow: hidden;
+	transition: width 200ms linear, height 200ms linear;
+}
+.chatlist {
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 30%;
+	max-width: 30%;
+	height: 100%;
+	justify-content: flex-start;
+	background-color: var(--rui_white);
+}
+.chatlist header {
+	padding: 0.5em;
+}
+.field_group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.quit_btn {
+	border: 0.08em solid var(--rui_red);
+	transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
+}
+.quit_btn:hover {
+	color: var(--rui_white);
+	background-color: var(--rui_red);
+}
+.addchat {
+	width: 100%;
+	background-color: var(--rui_placecolor);
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.addchat_btn {
+	border: 0;
+	background-color: var(--rui_semicolor);
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
+}
+.addchat_btn:hover {
+	color: var(--rui_white);
+	background-color: var(--rui_color);
+}
+
+.divider {
+	border-bottom: 0.08em solid var(--rui_placecolor);
+}
+.list {
+	height: 100%;
+}
+
+.main {
+	flex-grow: 1;
+}
+@media (max-width: 1440px) {
+	.root {
+		width: 100%;
+		height: 100vh;
+	}
 }
