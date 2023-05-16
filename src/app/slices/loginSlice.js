@@ -4,7 +4,7 @@ export const loginSlice = createSlice({
 	name: "counter",
 	initialState: {
 		isLoggedIn: false,
-		IdInstance: 0,
+		IdInstance: "",
 		ApiTokenInstance: "",
 	},
 	reducers: {
@@ -15,7 +15,7 @@ export const loginSlice = createSlice({
 		},
 		quit: (state) => {
 			state.isLoggedIn = false
-			state.IdInstance = 0
+			state.IdInstance = ""
 			state.ApiTokenInstance = ""
 		},
 	},

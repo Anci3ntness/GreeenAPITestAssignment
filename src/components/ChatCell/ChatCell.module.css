@@ -1,0 +1,13 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 4em;
+	cursor: pointer;
+	transition: background-color 100ms linear;
+	padding: 1em;
+	border-bottom: 1px solid var(--rui_placecolor);
+}
+.root:hover {
+	background-color: var(--rui_placecolor70);
+}
