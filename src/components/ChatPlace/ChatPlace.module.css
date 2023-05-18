@@ -10,7 +10,6 @@
 	justify-content: flex-start;
 	border-radius: 0.08em;
 	overflow: hidden;
-	transition: width 200ms linear, height 200ms linear;
 }
 .chatlist {
 	display: flex;
@@ -20,6 +19,8 @@
 	height: 100%;
 	justify-content: flex-start;
 	background-color: var(--rui_white);
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 .chatlist header {
 	padding: 0.5em;
@@ -68,12 +69,65 @@
 	background-color: var(--rui_placecolor);
 }
 .main {
+	flex: 1;
+	height: 100%;
 	display: flex;
-	flex-grow: 1;
+	overflow: hidden;
+}
+.chat_field {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--rui_color30);
 }
 
+.chat_field footer {
+	display: flex;
+	padding: 1em;
+	background-color: var(--rui_placecolor);
+	align-items: center;
+}
+
+.wrapper {
+	width: 100%;
+	min-height: 2.1em;
+	max-height: 4.2em;
+	overflow: hidden;
+}
+.text_area {
+	user-select: text;
+	white-space: pre-wrap;
+	word-break: break-word;
+	box-shadow: 0 0 1em rgba(11, 20, 26, 0.05);
+	border-radius: 0.16em;
+	padding: 0.4em 0.8em;
+	background-color: var(--rui_white);
+	color: var(--rui_black);
+	border: none;
+	outline: none;
+	text-decoration: none;
+	width: inherit;
+	cursor: text;
+	min-height: inherit;
+	max-height: inherit;
+	overflow-y: auto;
+}
+.text_area[placeholder]:empty:before {
+	content: attr(placeholder);
+	color: var(--rui_grey);
+}
+.text_area[placeholder]:empty:focus:before {
+	content: "";
+}
+.send {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 1em;
+	cursor: pointer;
+}
 .placeholder {
-	flex: 1;
+	margin: auto;
 	text-align: center;
 	font-size: 1.5em;
 }

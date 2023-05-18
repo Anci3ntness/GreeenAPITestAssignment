@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import styles from "./LoginPlace.module.css"
 import { useDispatch } from "react-redux"
 import { login } from "../../app/slices/loginSlice"
+import GreenAPIHandler from "../../utils/GreenAPIHandler"
+import { message as Alert } from "antd"
 export default function LoginPlace() {
 	const [IdInstance, setIdInstance] = useState("")
 	const [ApiTokenInstance, setApiTokenInstance] = useState("")
@@ -9,32 +11,17 @@ export default function LoginPlace() {
 	const dispatch = useDispatch()
 
 	const submitHandler = async () => {
-		await fetch(
-			`${process.env.REACT_APP_HOST}/waInstance${IdInstance}/GetStatusInstance/${ApiTokenInstance}`
-		)
-			.then((data) => {
-				if (data.ok) return data.json()
-				if (data.status === 401) {
-					console.log("Неверный IdInstance или ApiTokenInstance")
-					return
-				} else {
-					console.log("Произошла непредвиденная ошибка")
-					return
-				}
-			})
-			.then((json) => {
-				if (!json) return
-				if (json.statusInstance !== "online") {
-					console.log("Аккаунт не авторизован в WhatsApp")
-					return
-				}
-				dispatch(login({ IdInstance, ApiTokenInstance }))
-				setIdInstance("")
-				setApiTokenInstance("")
-			})
-			.catch((err) => {
-				console.log("Неверный формат данных")
-			})
+		const checkLogin = await new GreenAPIHandler(
+			IdInstance,
+			ApiTokenInstance
+		).GetStatusInstance()
+		if (!checkLogin.isValid) {
+			Alert.error(checkLogin.errMsg)
+			return
+		}
+		dispatch(login({ IdInstance, ApiTokenInstance }))
+		setIdInstance("")
+		setApiTokenInstance("")
 	}
 	return (
 		<div className={styles.root}>
