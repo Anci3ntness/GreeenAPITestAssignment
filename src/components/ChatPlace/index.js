@@ -84,6 +84,7 @@ export default function ChatPlace() {
 					.then((res) => {
 						if (!request.body) return
 						if (!res.deleted) return
+						console.log(request)
 						setChats((old) => {
 							const index = old.findIndex(
 								(f) => f.id === request.body.senderData.chatId
@@ -100,7 +101,10 @@ export default function ChatPlace() {
 									?.extendedTextMessageData?.text
 
 							old[index].messages.push({
-								incoming: type.includes("incoming"),
+								incoming:
+									request.body.typeWebhook.includes(
+										"incoming"
+									),
 								sender: request.body.senderData.sender,
 								textMessage: typeQuery,
 							})
